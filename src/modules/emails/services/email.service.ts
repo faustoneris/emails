@@ -19,7 +19,6 @@ export const transporter = createTransport({
 @Injectable()
 export class EmailService {
     async sendEmail(emailRequest: EmailRequest): Promise<void> {
-        console.log(`email Request: ${JSON.stringify(emailRequest)}`);
 
         switch (emailRequest.auctionStatus) {
             case AuctionStatus.ACCEPT: return await this.emailAccept(emailRequest);
